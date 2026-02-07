@@ -1,0 +1,160 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3a0ca3;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --danger-color: #7209b7;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+/* Real-time indicators */
+#live-indicator {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Alert styling */
+.alert-item {
+    border-left: 4px solid;
+    margin-bottom: 8px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.alert-item:hover {
+    transform: translateX(2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-item.high {
+    border-left-color: #f72585;
+    background-color: #fff0f5;
+}
+
+.alert-item.medium {
+    border-left-color: #ff9e00;
+    background-color: #fff8e1;
+}
+
+.alert-item.low {
+    border-left-color: #4cc9f0;
+    background-color: #e8f4f8;
+}
+
+/* Chart containers */
+canvas {
+    max-width: 100%;
+}
+
+/* Map styling */
+#map {
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+.leaflet-popup-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+/* Progress bars */
+.progress {
+    border-radius: 20px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+/* Badge styling */
+.badge {
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+/* Loading animation */
+.spinner-border {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Scrollbar styling */
+#alerts-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+#alerts-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#alerts-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+#alerts-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Status indicators */
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.status-healthy { background-color: #4cc9f0; }
+.status-warning { background-color: #ff9e00; }
+-status-critical { background-color: #f72585; }
